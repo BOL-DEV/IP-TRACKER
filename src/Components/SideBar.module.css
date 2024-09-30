@@ -1,0 +1,84 @@
+.container {
+  background-image: url(../assets/images/bg-sidebar-desktop.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40%;
+  height: 100%;
+  color: white;
+  padding: 2rem;
+  text-decoration: none;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.container button {
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-family: Bold;
+  border: 1px solid var(--white);
+  color: white;
+  outline: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  align-items: center;
+  background: transparent;
+}
+
+.container button:hover {
+  background: var(--light-blue);
+  color: black;
+  border: none;
+}
+
+.steps {
+  display: flex;
+  gap: 1rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.steps p {
+  font-size: 0.7rem;
+  font-family: Regular;
+  font-weight: normal;
+  color: var(--magnolia);
+  opacity: 0.6;
+}
+
+.steps h4 {
+  font-size: 0.8rem;
+  font-weight: 100;
+  font-family: Bold;
+  padding-top: 5px;
+  color: white;
+}
+
+.container a.active button {
+  background: var(--light-blue);
+  color: black;
+  border: none;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    background-image: url(../assets/images/bg-sidebar-mobile.svg); 
+    background-size: cover;
+    width: 100%;
+    height: 35%;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding-top: 4rem;
+  }
+
+  .none {
+    display: none;
+  }
+
+  .container button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}

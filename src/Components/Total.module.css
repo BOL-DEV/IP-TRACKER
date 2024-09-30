@@ -1,0 +1,126 @@
+.total {
+  background-color: var(--light-blue);
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.total p {
+  font-size: 0.8rem;
+  font-weight: lighter;
+  font-family: Regular;
+  color: var(--cool-gray);
+}
+
+.plan {
+  display: flex;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--cool-gray);
+  gap: 11rem;
+  align-items: center;
+}
+
+.plan h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.plan p {
+  text-decoration: underline;
+}
+
+.plan p:hover {
+  color: var(--purplish-blue);
+  cursor: pointer;
+}
+
+.plan h3 {
+  font-size: 0.9rem;
+}
+
+.addons {
+  margin-top: 1.5rem;
+}
+
+.addon {
+  margin-top: 1rem;
+  display: flex;
+  gap: 9rem;
+}
+
+.addon p {
+  width: 8rem;
+}
+
+.addon h5 {
+  font-weight: 100;
+}
+
+.sum {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+  margin-bottom: 5rem;
+}
+
+.sum p {
+  font-size: 0.8rem;
+  font-weight: 100;
+  color: var(--cool-gray);
+}
+
+.sum h4 {
+  color: var(--purplish-blue);
+}
+
+@media screen and (max-width: 767px) {
+  .total {
+    margin: 0 1rem;
+  }
+
+  .plan {
+    gap: 6.5rem;
+  }
+
+  .plan h4 {
+    font-size: 1.2rem;
+  }
+
+  .plan p {
+    font-size: 1.1rem;
+  }
+
+  .plan h3 {
+    font-size: 1.2rem;
+  }
+
+  .addon {
+    gap: 5rem;
+  }
+
+  .addon p {
+    font-size: 1.2rem;
+    width: 35rem;
+    /* border: 2px solid red; */
+  }
+
+  .addon h5 {
+    font-size: 1.2rem;
+  }
+
+  .sum {
+    gap: 2rem;
+    margin: 2rem 1rem 3rem;
+  }
+
+  .sum p {
+    font-size: 1.2rem;
+    /* border: 2px solid red; */
+    width: 15rem;
+  }
+
+  .sum h4 {
+    font-size: 1.2rem;
+  }
+}

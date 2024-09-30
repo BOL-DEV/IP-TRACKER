@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* text-decoration: none; */
+}
+
+@font-face {
+  font-family: Bold;
+  src: url(./assets/fonts/Ubuntu-Bold.ttf);
+}
+
+@font-face {
+  font-family: Medium;
+  src: url(./assets/fonts/Ubuntu-Medium.ttf);
+}
+
+@font-face {
+  font-family: Regular;
+  src: url(./assets/fonts/Ubuntu-Regular.ttf);
+}
+
+:root {
+  --marine-blue: hsl(213, 96%, 18%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-red: hsl(354, 84%, 57%);
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: var(--light-blue);
+  font-family: Regular;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid green; */
+}
+
+.sub-container {
+  width: 55%;
+  height: 73vh;
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  /* border: 2px solid red; */
+}
+
+.wrapper {
+  /* border: 2px solid red; */
+  padding-top: 1.5rem;
+  color: var(--marine-blue);
+}
+
+.wrapper button {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  background-color: var(--marine-blue);
+  color: var(--white);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: Medium;
+  cursor: pointer;
+  margin-top: 3.8rem;
+  margin-left: 18rem;
+}
+
+.wrapper button:hover {
+  background-color: var(--purplish-blue);
+}
+
+.wrapper footer {
+  display: flex;
+  gap: 14rem;
+  /* border: 2px solid red; */
+  align-items: center;
+}
+
+.wrapper footer button {
+  margin: 0;
+}
+
+.wrapper footer p {
+  font-family: Bold;
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+
+.wrapper footer p:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    display: block;
+  }
+
+  .sub-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-blue);
+    border-radius: 0%;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+
+  .wrapper {
+    position: absolute;
+    top: 18%;
+    background-color: var(--white);
+    margin: 1rem;
+    border-radius: 10px;
+    width: 90%;
+    padding-bottom: 2rem;
+  }
+
+  .wrapper button {
+    margin-left: 13rem;
+    margin-bottom: 1rem;
+    width: 8rem;
+    font-size: 1.1rem;
+    position: absolute;
+  }
+
+  .wrapper footer {
+    gap: 5rem;
+    margin: 3rem 1rem;
+    top: 100%;
+    position: absolute;
+  }
+
+  .wrapper footer p {
+    font-size: 1.3rem;
+    width: 7rem;
+  }
+
+  .wrapper footer button {
+    width: 8rem;
+    margin-left: 12rem;
+    font-size: 1.1rem;
+  }
+}

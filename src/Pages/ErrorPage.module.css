@@ -1,0 +1,8 @@
+.container{
+    display: flex;
+    /* justify-content: center; */
+    margin-left: 3rem;
+    align-items: center;
+    font-size: 2rem;
+    font-family: Bold;
+}
