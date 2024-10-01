@@ -8,6 +8,8 @@
   font-size: 0.8rem;
   font-family: Medium;
   padding-bottom: 0.5rem;
+  width: 40%;
+
 }
 
 .input input {
@@ -23,15 +25,27 @@
   border: 1px solid var(--purplish-blue);
 }
 
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.flex p {
+  font-weight: 100;
+  color: red;
+  width: 80%;
+
+  text-align: end;
+}
 
 @media screen and (max-width: 767px) {
-  .input{
+  .input {
     padding: 0 1rem;
     margin-bottom: 0.6rem;
-
   }
 
-  .input label{
+  .input label {
     font-size: 1.2rem;
   }
 }

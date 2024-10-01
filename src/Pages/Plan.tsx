@@ -6,12 +6,11 @@ import PlanOptions from "../Components/PlanOptions";
 import Toggle from "../Components/Toggle";
 
 const Plan = () => {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
-
-   const handleNext = () => {
-     navigate("/addons");
-   };
+  const handleNext = () => {
+    navigate("/addons");
+  };
 
   return (
     <form className="wrapper">
@@ -24,7 +23,7 @@ const Plan = () => {
 
       <Toggle />
 
-      <Footer title="Next Step" handleNext={handleNext}/>
+      <Footer title="Next Step" handleNext={handleNext} />
     </form>
   );
 };

@@ -10,18 +10,15 @@ const Home = () => {
 
   const { name, email, phoneNum } = usePlan();
 
-  const handleNext = () => {
-    // e.preventDefault();
+  const handleNext = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name && !email && !phoneNum) return null;
+
     navigate("/plan");
   };
 
-  const handleAuth = () => {
-
-    if (!name && !email && !phoneNum) console.log("err");
-  };
-
   return (
-    <form className="wrapper" onSubmit={handleAuth}>
+    <form className="wrapper">
       <Header
         title="Personal info"
         description="Please provide your name, email address and phone number"

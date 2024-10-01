@@ -161,6 +161,7 @@ const PlanProvider = ({ children }: { children: ReactNode }) => {
     };
     fetchPlans();
   }, []);
+  
 
   return (
     <PlanContext.Provider
