@@ -2,17 +2,19 @@ import { useNavigate } from "react-router-dom";
 import Biodata from "../Components/Biodata";
 import Button from "../Components/Button";
 import Header from "../Components/Header";
-import { usePlan } from "../context/PlanContext";
-// import styles from "./Home.module.css";
+// import { usePlan } from "../context/PlanContext";
+import useAuth from "../../hooks/useAuth";
+
 
 const Home = () => {
   const navigate = useNavigate();
 
-  const { name, email, phoneNum } = usePlan();
+  // const { name, email, phoneNum } = usePlan();
+  const { isEmailValid, isNameValid, isPhoneNumValid } = useAuth();
 
   const handleNext = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name && !email && !phoneNum) return null;
+    if (!isEmailValid && !isNameValid && !isPhoneNumValid) return null;
 
     navigate("/plan");
   };

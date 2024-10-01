@@ -1,5 +1,6 @@
 import { usePlan } from "../context/PlanContext";
 import styles from "./Biodata.module.css";
+import useAuth from "../../hooks/useAuth";
 
 const Biodata = () => {
   const { dispatch, name, email, phoneNum } = usePlan();
@@ -16,16 +17,7 @@ const Biodata = () => {
     dispatch({ type: "USER_PHONENUM", payload: e.target.value });
   };
 
-  const namePattern = /^[A-Z][a-z]+\s[A-Z][a-z]+$/;
-  const isNameValid = namePattern.test(name);
-
-  const phoneNumPattern = /^[+]?[0-9]{11}$/;
-  const isPhoneNumValid = phoneNumPattern.test(phoneNum);
-
-  const emailPattern = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
-  const isEmailValid = emailPattern.test(email);
-
-  
+  const { isNameValid, isEmailValid, isPhoneNumValid } = useAuth();
 
   return (
     <div>

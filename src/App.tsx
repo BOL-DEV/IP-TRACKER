@@ -15,6 +15,7 @@ import Summary from "./Pages/Summary";
 import { PlanProvider } from "./context/PlanContext";
 import ErrorPage from "./Pages/ErrorPage";
 import Finished from "./Pages/Finished";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   return (
@@ -27,10 +28,40 @@ function App() {
             <Routes>
               <Route index element={<Navigate replace to="/home" />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/plan" element={<Plan />} />
-              <Route path="/addons" element={<AddOns />} />
-              <Route path="/summary" element={<Summary />} />
-              <Route path="/finished" element={<Finished />} />
+
+              <Route
+                path="/plan"
+                element={
+                  <ProtectedRoute>
+                    <Plan />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/addons"
+                element={
+                  <ProtectedRoute>
+                    <AddOns />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/summary"
+                element={
+                  <ProtectedRoute>
+                    <Summary />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/finished"
+                element={
+                  <ProtectedRoute>
+                    <Finished />
+                  </ProtectedRoute>
+                }
+              />
+
               <Route path="*" element={<ErrorPage />} />
             </Routes>
           </div>
