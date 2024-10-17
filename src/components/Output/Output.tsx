@@ -1,15 +1,15 @@
-import styles from "./Output.module.css";
+import styles from './Output.module.css';
 
 const Output = () => {
   return (
     <div className={styles.wrapper}>
-      <Text title="IP ADDRESS" data="132.212.222.101" />
+      <Text title='IP ADDRESS' data='' />
       <hr />
-      <Text title="LOCATION" data="OKOKO" />
+      <Text title='LOCATION' data='' />
       <hr />
-      <Text title="TIMEZONE" data="WES 24" />
+      <Text title='TIMEZONE' data='' />
       <hr />
-      <Text title="ISP" data="Space X Starlink" />
+      <Text title='ISP' data='' />
     </div>
   );
 };

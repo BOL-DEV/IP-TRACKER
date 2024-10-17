@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 
 const IPkey = `https://api64.ipify.org/?format=json`;
 
+interface IPprops {
+  ip: string;
+}
+
 const useGetIP = () => {
-  const [IP, setIP] = useState("");
+  const [IP, setIP] = useState<IPprops>({ ip: '' });
 
   useEffect(() => {
     const getIP = async () => {
