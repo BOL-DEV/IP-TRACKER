@@ -1,6 +1,6 @@
 import "./App.css";
-import TopLayout from "./Layouts/TopLayout";
-import MapLayout from "./Layouts/MapLayout";
+import TopLayout from './Layouts/TopLayout/TopLayout';
+import MapLayout from './Layouts/MapLayout/MapLayout';
 
 function App() {
   return (
