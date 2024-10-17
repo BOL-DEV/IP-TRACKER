@@ -21,10 +21,9 @@ export default function useMySearch() {
 
       const data = await res.json();
       console.log(data);
-      const { ip, isp, location } = data;
-      console.log(ip, isp, location);
+     
 
-      setLocationInfo({ ip, isp, location });
+      setLocationInfo(data);
     } catch (error) {
       alert(error);
     } finally {
