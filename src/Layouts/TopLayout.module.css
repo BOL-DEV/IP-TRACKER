@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  height: 15rem;
+  background-image: url(../../public/images/pattern-bg-desktop.png);
+  background-repeat: no-repeat;
+  background-size: fit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center
+}
