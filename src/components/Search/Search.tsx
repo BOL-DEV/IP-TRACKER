@@ -1,14 +1,14 @@
 import { ChangeEvent, useState } from 'react';
 import styles from './Search.module.css';
-import useMySearch from '../../hooks/useMySearch';
+import { useIP } from '../../contexts/IpContext';
 
-const Search = ({ setSubmittedIp }) => {
+const Search = () => {
   const [searchIP, setSearchIP] = useState('');
-  const { isLoading } = useMySearch();
+  const { setIP } = useIP();
 
   const handleSubmit = function (e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmittedIp(searchIP);
+    setIP(searchIP);
   };
 
   return (
@@ -23,10 +23,9 @@ const Search = ({ setSubmittedIp }) => {
           onChange={(e) => {
             setSearchIP(e.target.value);
           }}
-          disabled={isLoading}
         />
       </label>
-      <button disabled={isLoading}>{'>'}</button>
+      <button>{'>'}</button>
     </form>
   );
 };

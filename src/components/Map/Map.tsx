@@ -12,15 +12,13 @@ export default function Map() {
   const [mapPosition, setMapPosition] = useState<
     LatLngExpression | LatLngTuple
   >([40, 0]);
-  console.log(setMapPosition);
-  console.log(mapPosition);
 
   return (
     <>
       <MapContainer
         className={styles.map}
         center={mapPosition}
-        zoom={13}
+        zoom={6}
         scrollWheelZoom={false}
       >
         <TileLayer
