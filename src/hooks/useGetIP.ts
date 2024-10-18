@@ -9,12 +9,17 @@ interface IPprops {
 const useGetIP = () => {
   const [userIP, setUserIP] = useState<IPprops>({ ip: '' });
 
+
   useEffect(() => {
     const getIP = async () => {
       try {
         const res = await fetch(IPkey);
+        if (!res.ok) {
+          throw new Error(`Could not get IP`);
+        }
         const data = await res.json();
-        setUserIP(data);
+
+        setUserIP(data ? data : { ip: '8.8.8.0' });
       } catch (error) {
         alert(error);
       }
@@ -23,7 +28,7 @@ const useGetIP = () => {
     getIP();
   }, []);
 
-  return { userIP };
+  return userIP;
 };
 
 export default useGetIP

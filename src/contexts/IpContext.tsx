@@ -1,5 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
-import useGetIP from '../hooks/useGetIP';
+import { createContext, useContext, useState } from 'react';
 import useMySearch from '../hooks/useMySearch';
 
 type IpContextType = {
@@ -7,21 +6,28 @@ type IpContextType = {
   setIP: React.Dispatch<React.SetStateAction<string>>;
   isLoading: boolean;
   locationInfo: object; // Replace with actual location type when available.
+  mapPosition: number[];
+  setMapPosition: React.Dispatch<React.SetStateAction<number[]>>;
 };
 
 const IpContext = createContext<IpContextType | undefined>(undefined);
 
 function IpProvider({ children }: { children: React.ReactNode }) {
   const [IP, setIP] = useState<string>('');
-  const { userIP } = useGetIP();
   const { isLoading, locationInfo } = useMySearch({ query: IP });
-
-  useEffect(() => {
-    setIP(userIP.ip);
-  }, [userIP]);
+  const [mapPosition, setMapPosition] = useState<number[]>([]);
 
   return (
-    <IpContext.Provider value={{ IP, setIP, isLoading, locationInfo }}>
+    <IpContext.Provider
+      value={{
+        IP,
+        setIP,
+        isLoading,
+        locationInfo,
+        mapPosition,
+        setMapPosition,
+      }}
+    >
       {children}
     </IpContext.Provider>
   );
