@@ -1,15 +1,23 @@
+import { useIP } from '../../contexts/IpContext';
 import styles from './Output.module.css';
 
 const Output = () => {
+  const { isLoading, locationInfo } = useIP();
+
+  const { ip, location, isp } = locationInfo;
+
   return (
     <div className={styles.wrapper}>
-      <Text title='IP ADDRESS' data='' />
+      <Text title='IP ADDRESS' data={isLoading ? 'loading...' : ip} />
       <hr />
-      <Text title='LOCATION' data='' />
+      <Text title='LOCATION' data={isLoading ? 'loading...' : location.city} />
       <hr />
-      <Text title='TIMEZONE' data='' />
+      <Text
+        title='TIMEZONE'
+        data={isLoading ? 'loading...' : location.timezone}
+      />
       <hr />
-      <Text title='ISP' data='' />
+      <Text title='ISP' data={isLoading ? 'loading...' : isp} />
     </div>
   );
 };

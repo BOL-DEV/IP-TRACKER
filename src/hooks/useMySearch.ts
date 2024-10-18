@@ -1,15 +1,26 @@
 import { useEffect, useState } from 'react';
 
-const apiKey = `at_r7JmkSZLXQOkaiEfP81qtTYf2PGNx`;
+const apiKey = `at_fZkrwj2AmrNkvwBxj93D4Olka5LS7`;
 
 interface useSearchType {
   query: string;
 }
 
-export default function useMySearch({ query }: useSearchType) {
-  const [isLoading, setIsLoading] = useState(false);
-  const [locationInfo, setLocationInfo] = useState({});
+const initialLocation = {
+  city: '',
+  country: '',
+  lat: 40,
+  lng: 80,
+  timezone: '',
+};
 
+export default function useMySearch({ query }: useSearchType) {
+  const [isLoading, setIsLoading] = useState(true);
+  const [locationInfo, setLocationInfo] = useState({
+    ip: '',
+    location: initialLocation,
+    isp: '',
+  });
 
   useEffect(() => {
     async function getSearchIpLocation(query: string) {
@@ -18,7 +29,6 @@ export default function useMySearch({ query }: useSearchType) {
         const res = await fetch(
           `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${query}`,
         );
-        console.log(res);
         if (!res.ok) {
           throw new Error(
             `Could not fetch location of ${query} 😔. Please try again...`,
@@ -26,7 +36,6 @@ export default function useMySearch({ query }: useSearchType) {
         }
 
         const data = await res.json();
-        console.log(data);
 
         setLocationInfo(data);
       } catch (error) {
