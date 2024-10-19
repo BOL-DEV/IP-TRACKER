@@ -28,3 +28,9 @@
     border-bottom-right-radius: 10px;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .wrapper input {
+    width: 15rem;
+  }
+}
