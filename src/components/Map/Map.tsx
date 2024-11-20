@@ -4,7 +4,7 @@ import { useIP } from '../../contexts/IpContext';
 import { useEffect, useState } from 'react';
 
 export default function Map() {
-  const [mapPosition, setMapPosition] = useState([0, 0]);
+  const [mapPosition, setMapPosition] = useState<[number, number]>([0, 0]);
   const [locationName, setLocationName] = useState('');
 
   const { locationInfo } = useIP();
@@ -40,7 +40,11 @@ export default function Map() {
   );
 }
 
-function ChangeCenter({ position }) {
+type ChangeCenterProps = {
+  position: [number, number];
+};
+
+function ChangeCenter({ position }: ChangeCenterProps) {
   const map = useMap();
   map.setView(position);
   return null;
