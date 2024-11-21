@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 import styles from './Search.module.css';
-import { useIP } from '../../contexts/IpContext';
+import { useIP } from '../../hooks/useIP';
 
 const Search = () => {
   const [searchIP, setSearchIP] = useState('');
