@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 import useMySearch from "../hooks/useMySearch";
 
 type LocationInfoType = {
@@ -54,12 +54,6 @@ function IpProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-function useIP() {
-  const context = useContext(IpContext);
-  if (!context) {
-    throw new Error("useIP must be used within an IpProvider");
-  }
-  return context;
-}
+
 
 export { IpProvider, useIP };
