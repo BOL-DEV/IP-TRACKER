@@ -7,37 +7,38 @@ export default function Map() {
   const [mapPosition, setMapPosition] = useState<[number, number]>([0, 0]);
   const [locationName, setLocationName] = useState('');
 
-  const { locationInfo } = useIP();
+  // const { locationInfo } = useIP();
 
-  useEffect(() => {
-    if (locationInfo) {
-      setMapPosition([locationInfo.location.lat, locationInfo.location.lng]);
-      setLocationName(locationInfo.location.city);
-    } else {
-      setMapPosition([0, 0]);
-      setLocationName('');
-    }
-  }, [locationInfo, setLocationName]);
+  // useEffect(() => {
+  //   if (locationInfo) {
+  //     setMapPosition([locationInfo.location.lat, locationInfo.location.lng]);
+  //     setLocationName(locationInfo.location.city);
+  //   } else {
+  //     setMapPosition([0, 0]);
+  //     setLocationName('');
+  //   }
+  // }, [locationInfo, setLocationName]);
 
-  return (
-    <>
-      <MapContainer
-        className={styles.map}
-        center={mapPosition}
-        zoom={13}
-        scrollWheelZoom={true}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
-        />
-        <Marker position={mapPosition}>
-          <Popup>{locationName}</Popup>
-        </Marker>
-        <ChangeCenter position={mapPosition} />
-      </MapContainer>
-    </>
-  );
+  return <h1>map</h1>
+  // return (
+  //   <>
+  //     <MapContainer
+  //       className={styles.map}
+  //       center={mapPosition}
+  //       zoom={13}
+  //       scrollWheelZoom={true}
+  //     >
+  //       <TileLayer
+  //         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  //         url='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
+  //       />
+  //       <Marker position={mapPosition}>
+  //         <Popup>{locationName}</Popup>
+  //       </Marker>
+  //       <ChangeCenter position={mapPosition} />
+  //     </MapContainer>
+  //   </>
+  // );
 }
 
 type ChangeCenterProps = {

@@ -3,16 +3,12 @@ import useMySearch from "../hooks/useMySearch";
 
 type LocationInfoType = {
   ip: string;
-  isp: string; 
-  location: {
-    lat: number;
-    lng: number;
-    city: string;
-    country: string; 
-    timezone: string; 
-  };
+  org: string;
+  loc: string;
+  city: string;
+  country: string;
+  timezone: string;
 };
-
 
 type IpContextType = {
   IP: string;
@@ -26,24 +22,19 @@ type IpContextType = {
 const IpContext = createContext<IpContextType | undefined>(undefined);
 
 function IpProvider({ children }: { children: React.ReactNode }) {
-  const [IP, setIP] = useState<string>("");
-  // const { isLoading, locationInfo } = useMySearch({ query: IP });
+  const [IP, setIP] = useState<string>('');
+
   const {
     isLoading,
     locationInfo = {
-      ip: "",
-      isp: "",
-      location: {
-        lat: 0,
-        lng: 0,
-        city: "",
-        country: "",
-        timezone: "",
-      },
+      ip: '',
+      org: '',
+      loc: '',
+      city: '',
+      country: '',
+      timezone: '',
     },
   } = useMySearch({ query: IP });
-
-
 
   const [mapPosition, setMapPosition] = useState<number[]>([]);
 
