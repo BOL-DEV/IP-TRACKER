@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-const IPkey = `https://ipinfo.io?token=${import.meta.env.VITE_IPINFO_TOKEN}`;
+const IPkey = `https://api64.ipify.org/?format=json`;
 
 interface IPprops {
   ip: string;
@@ -8,6 +8,7 @@ interface IPprops {
 
 const useGetIP = () => {
   const [userIP, setUserIP] = useState<IPprops>({ ip: '' });
+
 
   useEffect(() => {
     const getIP = async () => {
@@ -30,4 +31,4 @@ const useGetIP = () => {
   return userIP;
 };
 
-export default useGetIP;
+export default useGetIP

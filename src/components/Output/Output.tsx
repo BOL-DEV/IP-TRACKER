@@ -4,23 +4,24 @@ import styles from "./Output.module.css";
 const Output = () => {
   const { isLoading, locationInfo } = useIP();
 
-  const { ip, location, isp } = locationInfo;
+  const { ip, location, isp } = locationInfo || {};
 
-  return (
-    <div className={styles.wrapper}>
-      <Text title="IP ADDRESS" data={isLoading ? "loading..." : ip} />
-      <hr />
-      <Text title="LOCATION" data={isLoading ? "loading..." : location.city} />
-      <hr />
-      <Text
-        title="TIMEZONE"
-        data="asdfgh"
-        // data={isLoading ? 'loading...' : location.timezone}
-      />
-      <hr />
-      <Text title="ISP" data={isLoading ? "loading..." : isp} />
-    </div>
-  );
+  // return (
+  //   <div className={styles.wrapper}>
+  //     <Text title="IP ADDRESS" data={isLoading ? "loading..." : ip} />
+  //     <hr />
+  //     <Text title="LOCATION" data={isLoading ? "loading..." : location.city} />
+  //     <hr />
+  //     <Text
+  //       title="TIMEZONE"
+  //       data="asdfgh"
+  //       // data={isLoading ? 'loading...' : location.timezone}
+  //     />
+  //     <hr />
+  //     <Text title="ISP" data={isLoading ? "loading..." : isp} />
+  //   </div>
+  // );
+  return <h1>output</h1>;
 };
 
 interface TextProps {
