@@ -15,8 +15,6 @@ type IpContextType = {
   setIP: React.Dispatch<React.SetStateAction<string>>;
   isLoading: boolean;
   locationInfo: LocationInfoType;
-  mapPosition: number[];
-  setMapPosition: React.Dispatch<React.SetStateAction<number[]>>;
 };
 
 const IpContext = createContext<IpContextType | undefined>(undefined);
@@ -36,8 +34,6 @@ function IpProvider({ children }: { children: React.ReactNode }) {
     },
   } = useMySearch({ query: IP });
 
-  const [mapPosition, setMapPosition] = useState<number[]>([]);
-
   return (
     <IpContext.Provider
       value={{
@@ -45,8 +41,6 @@ function IpProvider({ children }: { children: React.ReactNode }) {
         setIP,
         isLoading,
         locationInfo,
-        mapPosition,
-        setMapPosition,
       }}
     >
       {children}
