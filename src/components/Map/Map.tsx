@@ -1,6 +1,6 @@
 import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
 import styles from './Map.module.css';
-import { useIP } from '../../contexts/IpContext';
+import { useIP } from '../../hooks/useIP';
 import { useEffect, useState } from 'react';
 
 export default function Map() {
