@@ -20,7 +20,9 @@ const useGetIP = () => {
 
         setUserIP(data ? data : { ip: '8.8.8.0' });
       } catch (error) {
-        alert(error);
+        alert(
+          `Please make sure you are connected to the internet and disable all vpn services then try again..., ${error}`,
+        );
       }
     };
 

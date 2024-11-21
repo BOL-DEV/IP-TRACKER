@@ -28,7 +28,7 @@ export default function useMySearch({ query }: useSearchType) {
         );
         if (!res.ok) {
           throw new Error(
-            `Could not fetch location of ${query} 😔. Please try again...`,
+            `Could not fetch location of ${query} 😔. Please make sure you are connected to the internet and disable all vpn services then try again...`,
           );
         }
 
