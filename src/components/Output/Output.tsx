@@ -1,4 +1,4 @@
-import { useIP } from "../../contexts/IpContext";
+import { useIP } from '../../hooks/useIP';
 import styles from "./Output.module.css";
 
 const Output = () => {
